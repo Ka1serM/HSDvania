@@ -20,7 +20,11 @@ Programming/Level Design: Mirkan Kayatürk
 Pixelart: Vivian Drouche
 Enemies: Rafein Abdulla
 UI/3DArt: Marcel Kisaki
-Dialog/SFX: Abdülkadir Tetik"
+Dialog/SFX: Abdülkadir Tetik
+
+Main Menu Title: \"Aquatic Realm of the Spirits\" and Main Floor Title: \"Evil Garden\"
+by Geoffrey \"G.G\" Gunn
+"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(237, -87)

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ck00dg60041rp" path="res://Scenes/Geometry/moving_platform.tscn" id="2_pmor1"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="3_d0fll"]
 [ext_resource type="PackedScene" uid="uid://cs2uyfgbxpa8b" path="res://Scenes/Levels/door.tscn" id="3_invnu"]
-[ext_resource type="FontFile" uid="uid://dgybdh2m0fn4g" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
+[ext_resource type="FontFile" uid="uid://d10ojyb38jida" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
 [ext_resource type="PackedScene" uid="uid://dvprl1706bxvj" path="res://Scenes/UI/hud.tscn" id="6_7la1n"]
 [ext_resource type="PackedScene" uid="uid://dengtn5arpki1" path="res://Scenes/Geometry/Breakable_Screen.tscn" id="9_7o3x6"]
 [ext_resource type="PackedScene" uid="uid://t3hiy8bby8og" path="res://Scenes/Player/lineal.tscn" id="11_ak6e8"]
@@ -68,6 +68,136 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1209, -466), Vector2(1096, -466)]
+}
+
+[sub_resource type="Animation" id="Animation_4maxv"]
+resource_name = "PCPoolElevators"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PCPoolElevator:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2139, -106), Vector2(2231, -106), Vector2(2231, -179), Vector2(2143, -179)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PCPoolElevator2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2390, -48), Vector2(2494, -266)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("../PCPoolElevator2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rdaww"]
+resource_name = "Platform movement"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2177, -630), Vector2(2177, -630), Vector2(2347, -630), Vector2(2347, -630), Vector2(2347, -792), Vector2(2347, -792), Vector2(2177, -792), Vector2(2177, -792)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MedgePlatform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2347, -630), Vector2(2347, -630), Vector2(2347, -792), Vector2(2347, -792), Vector2(2177, -792), Vector2(2177, -792), Vector2(2177, -630), Vector2(2177, -630)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../MedgePlatform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.03333, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2347, -792), Vector2(2347, -792), Vector2(2177, -792), Vector2(2177, -792), Vector2(2177, -630), Vector2(2177, -630), Vector2(2347, -630), Vector2(2347, -630)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MedgePlatform4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.03333, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2177, -792), Vector2(2177, -792), Vector2(2177, -630), Vector2(2177, -630), Vector2(2347, -630), Vector2(2347, -630), Vector2(2347, -792), Vector2(2347, -792)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FachschaftsraumPlatform:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-954, -952), Vector2(-279, -952)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../BotherDBS:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../BotherDBS2:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395)]
 }
 
 [sub_resource type="Animation" id="Animation_tljtl"]
@@ -178,136 +308,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(302, -361), Vector2(302, -361), Vector2(451, -361), Vector2(451, -361)]
-}
-
-[sub_resource type="Animation" id="Animation_rdaww"]
-resource_name = "Platform movement"
-length = 8.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2177, -630), Vector2(2177, -630), Vector2(2347, -630), Vector2(2347, -630), Vector2(2347, -792), Vector2(2347, -792), Vector2(2177, -792), Vector2(2177, -792)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../MedgePlatform2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2347, -630), Vector2(2347, -630), Vector2(2347, -792), Vector2(2347, -792), Vector2(2177, -792), Vector2(2177, -792), Vector2(2177, -630), Vector2(2177, -630)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../MedgePlatform3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3.03333, 4, 5, 6, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2347, -792), Vector2(2347, -792), Vector2(2177, -792), Vector2(2177, -792), Vector2(2177, -630), Vector2(2177, -630), Vector2(2347, -630), Vector2(2347, -630)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../MedgePlatform4:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.03333, 2, 3, 4, 5, 6, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2177, -792), Vector2(2177, -792), Vector2(2177, -630), Vector2(2177, -630), Vector2(2347, -630), Vector2(2347, -630), Vector2(2347, -792), Vector2(2347, -792)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../FachschaftsraumPlatform:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-954, -952), Vector2(-279, -952)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../BotherDBS:position")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7.03333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../BotherDBS2:position")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7.03333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395), Vector2(461, -451), Vector2(461, -395)]
-}
-
-[sub_resource type="Animation" id="Animation_4maxv"]
-resource_name = "PCPoolElevators"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../PCPoolElevator:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2139, -106), Vector2(2231, -106), Vector2(2231, -179), Vector2(2143, -179)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../PCPoolElevator2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2390, -48), Vector2(2494, -266)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("../PCPoolElevator2:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3d5en"]
@@ -712,13 +712,13 @@ position = Vector2(593, -396)
 position = Vector2(31, -26)
 message1 = "What? Where am I? I just wanted to doze off a little during class..."
 message2 = "Is this the HSD?"
-message3 = "It looks different somehow..."
+message3 = "It looks different somehow... Maybe this is a dream"
 
 [node name="CutsceneAreaForCables" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
 position = Vector2(330, -26)
 message1 = "Man, these cables look dangerous."
 message2 = "I shouldn't touch them."
-message3 = "Why would the HSD leave dangerous stuff like this lay out in the open..."
+message3 = "Why is there dangerous stuff like this out in the open..."
 
 [node name="CutsceneAreaForEnemy" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
 position = Vector2(793, -58)
@@ -747,3 +747,9 @@ position = Vector2(1967, 245)
 message1 = "Still, no one, not even Marko who practically lives here!"
 message2 = "Maybe I should just use the Bafoeg Applications to kill some time till they show up..."
 message3 = "Boring..."
+
+[node name="CutsceneAreaForMedge" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
+position = Vector2(2266, -586)
+message1 = "Oh no... what are those things?"
+message2 = "They look like my failed exams?"
+message3 = "Now they are haunting me even in my dreams..."
