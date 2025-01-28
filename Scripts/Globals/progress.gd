@@ -10,9 +10,7 @@ var doubleJumpCollected = false:
 		if !doubleJumpCollected:
 			doubleJumpCollected = val
 
-var messageCollected = false:
-	set(val):
-		messageCollected = val
+var HTTPMessageCollected = false
 
 
 func _ready() -> void:
@@ -20,6 +18,7 @@ func _ready() -> void:
 	Signalhive.connect("collected_bafoeg",add_to_collected_list)
 	Signalhive.connect("collected_double_jump", add_to_collected_list)
 	Signalhive.connect("retry", reset_bafoeg_tiles)
+	Signalhive.connect("collected_HTTP_message",add_to_collected_list)
 
 
 
@@ -41,7 +40,13 @@ func add_to_collected_list(tile_cord:Vector2i, type: int) -> void:
 			already_collected_list.append(tile_cord)
 		2:
 			doubleJumpCollected = true
-	
+			
+		3:
+			if !HTTPMessageCollected:
+				HTTPMessageCollected = true
+				Signalhive.emit_signal("queued_message", "It is a HTTP client!")
+				Signalhive.emit_signal("queued_message", "With this I should be able to send HTTP messages with Z.")
+				Signalhive.emit_signal("queued_message", "It is not the safe version of the protocoll, so I better watch my step...")
 	print(already_collected_list)
 	
 	

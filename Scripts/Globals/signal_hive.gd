@@ -23,6 +23,7 @@ signal retry
 
 signal collected_bafoeg(pos: Vector2, type)
 signal collected_double_jump(pos: Vector2, type)
+signal collected_HTTP_message(pos: Vector2, type)
 
 signal queued_message(message: String)
 signal entered_cutsene()

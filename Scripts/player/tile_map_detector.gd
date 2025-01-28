@@ -22,10 +22,16 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 				paper_collected_sfx.play()
 				Signalhive.emit_signal("collected_bafoeg",collided_tile_cord,1)
 			elif tile_data.get_custom_data("PickUp") == 2:
-				print("hey")
 				tilemap.set_cell(collided_tile_cord,-1)
 				item_collected_sfx.play()
 				Signalhive.emit_signal("collected_double_jump",collided_tile_cord,2)
+			elif tile_data.get_custom_data("PickUp") == 3:
+				tilemap.set_cell(collided_tile_cord,-1)
+				tilemap.erase_cell(tilemap.get_neighbor_cell(collided_tile_cord,0))
+				tilemap.erase_cell(tilemap.get_neighbor_cell(collided_tile_cord,8))
+				item_collected_sfx.play()
+				Signalhive.emit_signal("collected_HTTP_message",collided_tile_cord,3)
+
 			if tile_data.get_custom_data("IsOnStair"):
 				Signalhive.emit_signal("entered_stairs",true)
 			else: 

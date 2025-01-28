@@ -9,6 +9,8 @@ const CLIMBING_SPEED = -50
 @export var jump_height: float = 60
 @export var jump_seconds_to_peak: float = 0.5
 @export var jump_seconds_to_descent: float = 0.3
+
+
 @export var setting_screen: Control
 
 @onready var jump_velocity: float = ((2 * jump_height) / jump_seconds_to_peak) * -1
@@ -50,6 +52,8 @@ var prevDirection = 0
 
 #Checks if the Doublejump upgrade has been collected
 var _has_double_jump_upgrade:bool = false
+
+var _has_http_upgrade:bool = false
 
 # Checks if the character can currently doubleJump
 # Only effective when _has_double_jump_upgrade = true 
@@ -94,8 +98,9 @@ func _ready() -> void:
 	Signalhive.connect("transported_player", _move_through_door)
 	Signalhive.connect("retry", _retry)
 	
-	Signalhive.connect("collected_bafoeg", _collected_bafoeg)
+	##Signalhive.connect("collected_bafoeg", _collected_bafoeg)
 	Signalhive.connect("collected_double_jump",_collected_double_jump)
+	Signalhive.connect("collected_HTTP_message", _collected_http_upgrade)
 	
 	Signalhive.connect("entered_cutsene", _lock_movement)
 	Signalhive.connect("exited_cutscene", _unlock_movement)
@@ -296,7 +301,7 @@ func attack() -> void:
 			animation.tween_property(attack_collision, "disabled" , true, 0)
 
 func httpRequest() -> void:
-	if _can_request:
+	if _has_http_upgrade && _can_request:
 		
 		animation = get_tree().create_tween()
 		var httpRequest:httpReq = flieger.instantiate()
@@ -332,8 +337,9 @@ func _collected_double_jump(_pos, _type) -> void:
 	Signalhive.emit_signal("queued_message","With the power of multithreading, i can split the legwork to jump,  effectivly letting me double jump!")
 	_has_double_jump_upgrade = true
 
-func _collected_bafoeg(_pos, _type) -> void:
-	pass
+
+func _collected_http_upgrade(_pos,_type) -> void:
+	_has_http_upgrade = true
 
 func _touching_ladder() -> void:
 	_can_climb = true
