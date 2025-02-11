@@ -18,7 +18,8 @@ func _ready() -> void:
 func _on_spielen_pressed() -> void:
 	gong_sound.play()
 	hsdvania_sfx.play()
-	animation_player.play("Sitting Sleep")
+	get_tree().change_scene_to_file("res://Scenes/Levels/main_hall.tscn")
+	#animation_player.play("Sitting Sleep")
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "Sitting Sleep":

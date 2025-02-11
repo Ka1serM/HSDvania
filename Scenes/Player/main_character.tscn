@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://bfla10se41emq" path="res://Scenes/Player/tile_map_detector.tscn" id="3_brbqs"]
 [ext_resource type="PackedScene" uid="uid://ck8cocmaryugc" path="res://Scenes/Sound/sfx_handler.tscn" id="5_5ls4o"]
 [ext_resource type="Script" path="res://Scripts/player/inventory.gd" id="5_bg747"]
-[ext_resource type="AudioStream" uid="uid://b02yuh00q5g81" path="res://Audio/Sfx/jumping.mp3" id="8_sb0qx"]
-[ext_resource type="AudioStream" uid="uid://8c72ridg0cxb" path="res://Audio/Sfx/attack1.mp3" id="9_0iv4r"]
-[ext_resource type="AudioStream" uid="uid://jl8ircfl3pku" path="res://Audio/Sfx/attack2.mp3" id="10_upi0k"]
-[ext_resource type="AudioStream" uid="uid://et5ex6cgu1hs" path="res://Audio/Sfx/attack3.mp3" id="11_5ijhs"]
-[ext_resource type="AudioStream" uid="uid://c230y1h538cw" path="res://Audio/Sfx/continue.mp3" id="11_rmhuv"]
-[ext_resource type="AudioStream" uid="uid://72m8qcfvbukt" path="res://Audio/Sfx/door.mp3" id="14_pmrrn"]
+[ext_resource type="AudioStream" uid="uid://can0kfw3fb6fv" path="res://Audio/Sfx/jumping.mp3" id="8_sb0qx"]
+[ext_resource type="AudioStream" uid="uid://dw37wugdln6ws" path="res://Audio/Sfx/attack1.mp3" id="9_0iv4r"]
+[ext_resource type="AudioStream" uid="uid://r5y0br3ho1yl" path="res://Audio/Sfx/attack2.mp3" id="10_upi0k"]
+[ext_resource type="AudioStream" uid="uid://4uk0seja3qjo" path="res://Audio/Sfx/attack3.mp3" id="11_5ijhs"]
+[ext_resource type="AudioStream" uid="uid://d2vrm6706v50l" path="res://Audio/Sfx/continue.mp3" id="11_rmhuv"]
+[ext_resource type="AudioStream" uid="uid://dngirpw7hps8a" path="res://Audio/Sfx/door.mp3" id="14_pmrrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1apkg"]
 size = Vector2(25, 7)
