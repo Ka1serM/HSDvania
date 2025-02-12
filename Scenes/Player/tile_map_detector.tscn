@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/player/tile_map_detector.gd" id="1_x2y86"]
 [ext_resource type="PackedScene" uid="uid://ck8cocmaryugc" path="res://Scenes/Sound/sfx_handler.tscn" id="2_gxqf4"]
-[ext_resource type="AudioStream" uid="uid://bj5scnxu0wj44" path="res://Audio/Sfx/item_collected.mp3" id="3_epp7d"]
-[ext_resource type="AudioStream" uid="uid://4qju1vilj2a8" path="res://Audio/Sfx/paper_collect.mp3" id="4_trd3d"]
-[ext_resource type="AudioStream" uid="uid://buy46t04e026s" path="res://Audio/Sfx/damage.mp3" id="5_fvoib"]
+[ext_resource type="AudioStream" uid="uid://c2kmfakd32jiu" path="res://Audio/Sfx/item_collected.mp3" id="3_epp7d"]
+[ext_resource type="AudioStream" uid="uid://dwhkpvylx5oy1" path="res://Audio/Sfx/paper_collect.mp3" id="4_trd3d"]
+[ext_resource type="AudioStream" uid="uid://iugn2334ctwv" path="res://Audio/Sfx/damage.mp3" id="5_fvoib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwvrn"]
 size = Vector2(36.8656, 26.056)
