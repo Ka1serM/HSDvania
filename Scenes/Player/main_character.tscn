@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://mmy2rn1ftwp2"]
+[gd_scene load_steps=17 format=3 uid="uid://mmy2rn1ftwp2"]
 
 [ext_resource type="Script" path="res://Scripts/player/main_character.gd" id="1_j7k8t"]
 [ext_resource type="PackedScene" uid="uid://d25q8c7ep2fqe" path="res://Scenes/3D/character.tscn" id="2_q0svv"]
 [ext_resource type="PackedScene" uid="uid://bfla10se41emq" path="res://Scenes/Player/tile_map_detector.tscn" id="3_brbqs"]
 [ext_resource type="PackedScene" uid="uid://ck8cocmaryugc" path="res://Scenes/Sound/sfx_handler.tscn" id="5_5ls4o"]
 [ext_resource type="Script" path="res://Scripts/player/inventory.gd" id="5_bg747"]
-[ext_resource type="AudioStream" uid="uid://can0kfw3fb6fv" path="res://Audio/Sfx/jumping.mp3" id="8_sb0qx"]
-[ext_resource type="AudioStream" uid="uid://dw37wugdln6ws" path="res://Audio/Sfx/attack1.mp3" id="9_0iv4r"]
-[ext_resource type="AudioStream" uid="uid://r5y0br3ho1yl" path="res://Audio/Sfx/attack2.mp3" id="10_upi0k"]
-[ext_resource type="AudioStream" uid="uid://4uk0seja3qjo" path="res://Audio/Sfx/attack3.mp3" id="11_5ijhs"]
-[ext_resource type="AudioStream" uid="uid://d2vrm6706v50l" path="res://Audio/Sfx/continue.mp3" id="11_rmhuv"]
-[ext_resource type="AudioStream" uid="uid://dngirpw7hps8a" path="res://Audio/Sfx/door.mp3" id="14_pmrrn"]
+[ext_resource type="AudioStream" uid="uid://cwtkxo5dcgik7" path="res://Audio/Sfx/jumping.mp3" id="8_sb0qx"]
+[ext_resource type="AudioStream" uid="uid://cyeqiuq8j6dyl" path="res://Audio/Sfx/attack1.mp3" id="9_0iv4r"]
+[ext_resource type="AudioStream" uid="uid://c5q5lgys00sba" path="res://Audio/Sfx/attack2.mp3" id="10_upi0k"]
+[ext_resource type="AudioStream" uid="uid://dx4t1frw3wwg4" path="res://Audio/Sfx/attack3.mp3" id="11_5ijhs"]
+[ext_resource type="AudioStream" uid="uid://bn5v0khpf6n7l" path="res://Audio/Sfx/continue.mp3" id="11_rmhuv"]
+[ext_resource type="PackedScene" uid="uid://b67r3klauhadi" path="res://Scenes/UI/settings.tscn" id="12_rnvi4"]
+[ext_resource type="AudioStream" uid="uid://du57rnh0atqxj" path="res://Audio/Sfx/door.mp3" id="14_pmrrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1apkg"]
 size = Vector2(25, 7)
@@ -23,9 +24,10 @@ size = Vector2(12, 24)
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_4cuvp"]
 length = 18.0
 
-[node name="MainCharacter" type="CharacterBody2D"]
+[node name="MainCharacter" type="CharacterBody2D" node_paths=PackedStringArray("setting_screen")]
 collision_layer = 4
 script = ExtResource("1_j7k8t")
+setting_screen = NodePath("Settings")
 
 [node name="AttackArea2D" type="Area2D" parent="."]
 collision_layer = 64
@@ -100,6 +102,10 @@ stream = ExtResource("11_rmhuv")
 
 [node name="Pause" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_rmhuv")
+
+[node name="Settings" parent="." node_paths=PackedStringArray("pause_sfx", "continue_sfx") instance=ExtResource("12_rnvi4")]
+pause_sfx = NodePath("../Pause")
+continue_sfx = NodePath("../Continue")
 
 [connection signal="timeout" from="Invincibilty timer" to="." method="_on_invincibilty_timer_timeout"]
 [connection signal="timeout" from="gameovertimer" to="." method="_on_gameovertimer_timeout"]

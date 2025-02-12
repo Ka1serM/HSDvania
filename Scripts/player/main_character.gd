@@ -123,14 +123,6 @@ func _collected(collectible: Collectible) -> void:
 	inventory.add(collectible)
 #Main loop of the character
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
-		GlobalVariables.paused = !GlobalVariables.paused
-		if GlobalVariables.paused:
-			pause_sfx.play()
-		else:
-			continue_sfx.play()
-		setting_screen.ToggleVisibility(GlobalVariables.paused)
-	
 	if !GlobalVariables.paused:
 		if !_is_in_cutscene:
 			gravity(delta)
@@ -141,6 +133,7 @@ func _physics_process(delta: float) -> void:
 			attack()
 			prevVelocity = velocity
 			prevDirection = direction
+
 
 
 # Function that handles the Jump functionality
