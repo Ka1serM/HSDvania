@@ -13,7 +13,7 @@ signal got_stomped
 
 func _physics_process(delta):
 	# Schwerkraft anwenden
-	velocity.y += GRAVITY * delta #kann man rauslöschen, but idk falls man mehrer spawnt und die in der luft sind sollen die fallen
+	velocity.y += GRAVITY * delta #kann man rauslöschen, but idk falls man mehrer spawnt und die in der luft sein sollen die fallen
 
 	# Bewegung horizontal
 	velocity.x = SPEED * direction
@@ -41,4 +41,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	print("slime hat schaden gemacht (: )")
+	Signalhive.emit_signal("player_damaged", 20)

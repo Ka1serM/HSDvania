@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://x7fudq03qswp"]
 
-[ext_resource type="Texture2D" uid="uid://bvqgj6gm74eu0" path="res://Assets/profsprite-RecoveredRichtig.png" id="1_d7l7c"]
+[ext_resource type="Texture2D" uid="uid://dr0vht05qj4eo" path="res://Assets/profsprite-RecoveredRichtig.png" id="1_d7l7c"]
 [ext_resource type="Script" path="res://Scripts/enemy_professor.gd" id="1_eprlo"]
 [ext_resource type="PackedScene" uid="uid://btl0sgycfdyn4" path="res://Scenes/Projektil.tscn" id="2_ln06g"]
-[ext_resource type="Texture2D" uid="uid://bxrntrt64vs8m" path="res://Assets/profsprite-Recovered.png" id="3_jyul1"]
+[ext_resource type="Texture2D" uid="uid://l3uesxa6on7x" path="res://Assets/profsprite-Recovered.png" id="3_jyul1"]
 [ext_resource type="Texture2D" uid="uid://binnbtnqr7fag" path="res://Assets/exclamationmark.png" id="4_mk5w2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ljtg"]

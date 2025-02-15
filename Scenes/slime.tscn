@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b63bdnwil11yv"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_4eh22"]
-[ext_resource type="Texture2D" uid="uid://bm7w5nf4efumb" path="res://Assets/slime_purple.png" id="1_j824r"]
+[ext_resource type="Texture2D" uid="uid://b0r54jx570wm6" path="res://Assets/slime_purple.png" id="1_j824r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w84ns"]
 atlas = ExtResource("1_j824r")
@@ -43,7 +43,7 @@ animations = [{
 size = Vector2(10, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vraf6"]
-size = Vector2(14, 9)
+size = Vector2(16, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g4jq"]
 size = Vector2(14, 9)
@@ -76,6 +76,8 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uy5em")
 
 [node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 position = Vector2(0, 7.5)

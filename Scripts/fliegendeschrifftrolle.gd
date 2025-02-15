@@ -5,11 +5,12 @@ var path_speed = 0.1
 var player: Node2D = null
 @export var path: Path2D = null
 var path_follow_2D: PathFollow2D = null
+signal got_stomped
 
 
 func _ready():
 	# Positioniere die Schriftrolle
-	#global_position = Vector2(250, -220)
+	#global_position = Vector2(250, -220) 
 	print("Schrifttrolle positioniert bei: ", global_position)
 	
 	# Finde den Spieler
@@ -49,3 +50,17 @@ func _physics_process(delta: float):
 		move_and_slide()  # Bewegung anwenden
 	else:
 		print("Kein Spieler gefunden, keine Bewegung!")
+		
+
+
+func _on_death_area_on_head_body_entered(body: Node2D) -> void:
+	print("Kollidierter Node:", body.name)
+	if body is CharacterBody2D:  # Prüft ob es ein Charakter ist
+		print("Charakter erkannt!")
+		got_stomped.emit()
+		queue_free() # gegner löschen
+
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	print("folgender Node erhielt damage: ", body.name)
+	Signalhive.emit_signal("player_damaged", 10)

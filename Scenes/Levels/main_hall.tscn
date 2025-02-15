@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ck00dg60041rp" path="res://Scenes/Geometry/moving_platform.tscn" id="2_pmor1"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="3_d0fll"]
 [ext_resource type="PackedScene" uid="uid://cs2uyfgbxpa8b" path="res://Scenes/Levels/door.tscn" id="3_invnu"]
-[ext_resource type="FontFile" uid="uid://dgybdh2m0fn4g" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
+[ext_resource type="FontFile" uid="uid://6k8qt3jkoc8x" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
 [ext_resource type="PackedScene" uid="uid://dvprl1706bxvj" path="res://Scenes/UI/hud.tscn" id="6_7la1n"]
 [ext_resource type="PackedScene" uid="uid://dengtn5arpki1" path="res://Scenes/Geometry/Breakable_Screen.tscn" id="9_7o3x6"]
 [ext_resource type="PackedScene" uid="uid://t3hiy8bby8og" path="res://Scenes/Player/lineal.tscn" id="11_ak6e8"]
-[ext_resource type="AudioStream" uid="uid://2oasi1ytgvqj" path="res://Audio/Music/geoffreygunn+aquaticrealmofthespirits.mp3" id="12_mjm0q"]
+[ext_resource type="AudioStream" uid="uid://da5ldau07hlkp" path="res://Audio/Music/geoffreygunn+aquaticrealmofthespirits.mp3" id="12_mjm0q"]
 [ext_resource type="PackedScene" uid="uid://cqercf02o0yep" path="res://Scenes/Sound/MusicHandler.tscn" id="12_shslj"]
 [ext_resource type="PackedScene" uid="uid://df2h0mbjaip5u" path="res://Scenes/3D/pool.tscn" id="14_6mhh8"]
 [ext_resource type="PackedScene" uid="uid://x7fudq03qswp" path="res://Scenes/enemy_professor.tscn" id="15_xqw21"]
@@ -635,7 +635,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(31, -26)
+position = Vector2(36, -34)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]
@@ -708,7 +708,7 @@ position = Vector2(593, -396)
 [node name="CutsceneAreas" type="Node2D" parent="."]
 
 [node name="CutsceneAreaForStart" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
-position = Vector2(31, -26)
+position = Vector2(36, -27)
 message1 = "What? Where am I? I just wanted to doze off a little during class..."
 message2 = "Is this the HSD?"
 message3 = "It looks different somehow... Maybe this is a dream"
