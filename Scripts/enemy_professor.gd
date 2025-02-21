@@ -5,7 +5,7 @@ const SPEED = 60
 var direction = 1 
 var player_in_sight: bool = false
 var player: Node2D = null
-
+signal got_stomped
 @export var shoot_cooldown: float = 1.5
 @export var projectile_scene: PackedScene  # Projektil-Szene
 @onready var shoot_timer = $Timer
@@ -110,3 +110,13 @@ func _on_area_2d_2_body_exited(body: Node2D) -> void:
 		player_in_sight = false
 		player = null
 		shoot_timer.stop()
+
+
+
+
+func _on_death_area_on_head_body_entered(body: Node2D) -> void:
+	print("Kollidierter Node:", body.name)
+	if body is CharacterBody2D:  # Prüft ob es ein Charakter ist
+		print("Charakter erkannt!")
+		got_stomped.emit()
+		queue_free() # gegner löschen

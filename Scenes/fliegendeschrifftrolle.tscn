@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cvo3chv1qeytb" path="res://Scenes/killzone.tscn" id="3_idlgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgahm"]
-size = Vector2(83, 79)
+size = Vector2(83, 83.3333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17r66"]
 radius = 39.1152
@@ -102,7 +102,7 @@ collision_layer = 9
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(0.5, -0.5)
+position = Vector2(0.5, 1.66667)
 shape = SubResource("RectangleShape2D_lgahm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
