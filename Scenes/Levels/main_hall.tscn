@@ -635,7 +635,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(31, -35)
+position = Vector2(30, -36)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]

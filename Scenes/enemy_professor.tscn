@@ -181,7 +181,7 @@ position = Vector2(-17, 26)
 target_position = Vector2(-15, 0)
 
 [node name="Exclamationmark" type="Sprite2D" parent="."]
-position = Vector2(-5, -26)
+position = Vector2(-9, -23)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_mk5w2")
 
@@ -201,7 +201,7 @@ collision_mask = 4
 wait_time = 12.649
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(17, 24)
+position = Vector2(20, 23)
 
 [node name="BodyOfEnemy" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 21)
