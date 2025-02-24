@@ -1,15 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpa0kr84d15j1"]
+[gd_scene load_steps=10 format=3 uid="uid://dpa0kr84d15j1"]
 
 [ext_resource type="Script" path="res://Scripts/framerate_controller.gd" id="1_3gk3p"]
 [ext_resource type="Shader" path="res://Shaders/pixelate.gdshader" id="2_1wose"]
-[ext_resource type="ArrayMesh" uid="uid://bmx5gsj2dbhji" path="res://Assets/3D/Models/Knot.res" id="2_4sp6t"]
-
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ahli"]
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.5, 0.5, 0.5, 1)
-roughness = 0.0
+[ext_resource type="ArrayMesh" uid="uid://qeyd1dxqeki1" path="res://Assets/3D/Models/Heart.obj" id="2_qrjso"]
 
 [sub_resource type="Environment" id="Environment_ugs4f"]
 ambient_light_source = 2
@@ -67,10 +60,8 @@ transparent_bg = true
 script = ExtResource("1_3gk3p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 4.46638e-06, 0, 1, 0, -4.46638e-06, 0, 1, 0, 0, 0)
-mesh = ExtResource("2_4sp6t")
+mesh = ExtResource("2_qrjso")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_1ahli")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 30, 0)
@@ -84,7 +75,6 @@ projection = 1
 size = 50.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport"]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_bic5x")
 }

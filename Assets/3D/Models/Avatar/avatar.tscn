@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://by142aylipl8y"]
 
-[ext_resource type="PackedScene" uid="uid://c5bvmhpd2h7bv" path="res://Assets/3D/Models/Avatar/AvatarExport.glb" id="1_p4neo"]
+[ext_resource type="PackedScene" uid="uid://d3m5y55geii5s" path="res://Assets/3D/Models/Avatar/AvatarExport.glb" id="1_p4neo"]
 
 [node name="AvatarExport" instance=ExtResource("1_p4neo")]
 

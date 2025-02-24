@@ -86,7 +86,6 @@ var animation: Tween
 
 var current_weapon
 
-
 func _ready() -> void:
 	#Subscribing to relevant signals
 	Signalhive.connect("collected",_collected)

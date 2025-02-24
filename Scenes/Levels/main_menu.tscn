@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dx5ory3yth7fh"]
+[gd_scene load_steps=18 format=3 uid="uid://dx5ory3yth7fh"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_2x5gi"]
 [ext_resource type="Shader" path="res://Shaders/transition.gdshader" id="2_qbtis"]
@@ -13,13 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://cqercf02o0yep" path="res://Scenes/Sound/MusicHandler.tscn" id="10_ukr7w"]
 [ext_resource type="PackedScene" uid="uid://b67r3klauhadi" path="res://Scenes/UI/settings.tscn" id="12_nl856"]
 [ext_resource type="PackedScene" uid="uid://d3v78socwb884" path="res://Scenes/3D/vorlesungssaal_menu.tscn" id="12_vimux"]
+[ext_resource type="Texture2D" uid="uid://dj3ds8wu02i36" path="res://Shaders/CloudMask.png" id="14_bvye5"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbv7k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tldu2"]
 shader = ExtResource("2_qbtis")
-shader_parameter/progress = 0.175
-shader_parameter/pixelation_amount = 0.2
-shader_parameter/mask_scale = Vector2(1, 1)
-shader_parameter/mask_offset = Vector2(0, 0)
+shader_parameter/player_screen_pos = Vector2(0.5, 0.5)
+shader_parameter/progress = 0.0
+shader_parameter/pixel_size = 70.0
+shader_parameter/mask_pixel_size = 70.0
+shader_parameter/tint_color = Color(0.567, 0.361, 0.361, 1)
+shader_parameter/blur_amount = 5.0
+shader_parameter/MASK_TEXTURE = ExtResource("14_bvye5")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukipp"]
 font = ExtResource("3_7wer8")
@@ -47,7 +51,9 @@ position = Vector2(576, 324)
 
 [node name="Transition" type="ColorRect" parent="UI"]
 z_index = 1
-material = SubResource("ShaderMaterial_kbv7k")
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("ShaderMaterial_tldu2")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
