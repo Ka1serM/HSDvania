@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://x7fudq03qswp"]
+[gd_scene load_steps=29 format=3 uid="uid://x7fudq03qswp"]
 
 [ext_resource type="Texture2D" uid="uid://dr0vht05qj4eo" path="res://Assets/profsprite-RecoveredRichtig.png" id="1_d7l7c"]
 [ext_resource type="Script" path="res://Scripts/enemy_professor.gd" id="1_eprlo"]
@@ -159,6 +159,9 @@ size = Vector2(500, 58.8984)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scxtu"]
 size = Vector2(25, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ria3y"]
+size = Vector2(50, 65)
+
 [node name="EnemyProfessor" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
 collision_mask = 5
@@ -225,6 +228,15 @@ collision_mask = 5
 position = Vector2(-6.5, -9.5)
 shape = SubResource("RectangleShape2D_scxtu")
 
+[node name="CollisionDamage" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDamage"]
+position = Vector2(-5, 25.5)
+shape = SubResource("RectangleShape2D_ria3y")
+
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
 [connection signal="body_entered" from="DeathAreaOnHead" to="." method="_on_death_area_on_head_body_entered"]
+[connection signal="body_entered" from="CollisionDamage" to="." method="_on_collision_damage_body_entered"]

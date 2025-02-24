@@ -635,7 +635,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(30, -36)
+position = Vector2(34, -33)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]
@@ -720,7 +720,7 @@ message2 = "I shouldn't touch them."
 message3 = "Why is there dangerous stuff like this out in the open..."
 
 [node name="CutsceneAreaForEnemy" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
-position = Vector2(903, -58)
+position = Vector2(901, -63)
 message1 = "WHOA?!"
 message2 = "Who is this? Why does he look so aggressive?!"
 message3 = "These lecturer sure look terrifying!"
