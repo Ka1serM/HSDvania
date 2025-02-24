@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ck00dg60041rp" path="res://Scenes/Geometry/moving_platform.tscn" id="2_pmor1"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="3_d0fll"]
 [ext_resource type="PackedScene" uid="uid://cs2uyfgbxpa8b" path="res://Scenes/Levels/door.tscn" id="3_invnu"]
-[ext_resource type="FontFile" uid="uid://6k8qt3jkoc8x" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
+[ext_resource type="FontFile" uid="uid://2ic6uc81xqjn" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
 [ext_resource type="PackedScene" uid="uid://dvprl1706bxvj" path="res://Scenes/UI/hud.tscn" id="6_7la1n"]
 [ext_resource type="PackedScene" uid="uid://dengtn5arpki1" path="res://Scenes/Geometry/Breakable_Screen.tscn" id="9_7o3x6"]
 [ext_resource type="PackedScene" uid="uid://t3hiy8bby8og" path="res://Scenes/Player/lineal.tscn" id="11_ak6e8"]
-[ext_resource type="AudioStream" uid="uid://da5ldau07hlkp" path="res://Audio/Music/geoffreygunn+aquaticrealmofthespirits.mp3" id="12_mjm0q"]
+[ext_resource type="AudioStream" uid="uid://c1rlg7rb8na15" path="res://Audio/Music/geoffreygunn+aquaticrealmofthespirits.mp3" id="12_mjm0q"]
 [ext_resource type="PackedScene" uid="uid://cqercf02o0yep" path="res://Scenes/Sound/MusicHandler.tscn" id="12_shslj"]
 [ext_resource type="PackedScene" uid="uid://df2h0mbjaip5u" path="res://Scenes/3D/pool.tscn" id="14_6mhh8"]
 [ext_resource type="PackedScene" uid="uid://x7fudq03qswp" path="res://Scenes/enemy_professor.tscn" id="15_xqw21"]
@@ -340,14 +340,20 @@ offset_right = 637.901
 offset_bottom = -6.8513
 
 [node name="Infogebäude" type="Label" parent="Labels"]
-layout_mode = 0
-offset_left = -507.901
-offset_top = -80.1487
-offset_right = -332.901
-offset_bottom = 72.8513
-scale = Vector2(0.584387, 0.584387)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -501.901
+offset_top = -84.1487
+offset_right = 72.099
+offset_bottom = 208.851
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
 theme = ExtResource("3_d0fll")
 theme_override_fonts/font = ExtResource("4_4j174")
+theme_override_font_sizes/font_size = 48
 text = "A/D = Move
 W = Move through doors 
 Space = Jump
