@@ -8,6 +8,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("reset"):
 		GlobalVariables.collectedFirstBafoeg = false
+		GlobalVariables.bafoeg_count = 0
 		get_tree().change_scene_to_file("res://Scenes/Levels/main_hall.tscn")
 	elif event.is_action_pressed("quit"):
 		get_tree().quit()
@@ -15,6 +16,7 @@ func _input(event: InputEvent) -> void:
 		Signalhive.emit_signal("retry")
 		Engine.time_scale = 1
 		isInGameOverScreen = false
+
 	
 
 func _enter_game_over_screen() -> void:

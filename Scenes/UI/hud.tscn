@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvprl1706bxvj"]
+[gd_scene load_steps=14 format=3 uid="uid://dvprl1706bxvj"]
 
 [ext_resource type="Script" path="res://Scripts/ui/hud.gd" id="1_20f3f"]
 [ext_resource type="PackedScene" uid="uid://bhp0iy4vb6m6" path="res://Scenes/UI/health_bar.tscn" id="1_senfn"]
@@ -11,6 +11,7 @@
 [ext_resource type="LabelSettings" uid="uid://2076kcukacf7" path="res://Themes/label_settings.tres" id="6_0df8f"]
 [ext_resource type="AudioStream" uid="uid://y5str6yfvy3m" path="res://Audio/Sfx/continue.mp3" id="6_nqcsj"]
 [ext_resource type="FontFile" uid="uid://6k8qt3jkoc8x" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="7_n4tbo"]
+[ext_resource type="AudioStream" uid="uid://ducq1ssjkoeu7" path="res://Audio/Sfx/Yippee Sound Effect.mp3" id="10_0xqcm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8wlas"]
 shader = ExtResource("2_5yp8a")
@@ -93,6 +94,10 @@ layout_mode = 2
 texture = ExtResource("3_ctj7b")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="WinSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0xqcm")
+volume_db = 10.0
 
 [node name="ContinueSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_nqcsj")

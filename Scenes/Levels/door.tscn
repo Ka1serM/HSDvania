@@ -19,6 +19,8 @@ offset_top = -46.0
 offset_right = 19.0
 offset_bottom = -29.0
 label_settings = ExtResource("3_kj3tn")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 4

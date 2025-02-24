@@ -1,17 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://blavokp8kieee"]
+[gd_scene load_steps=7 format=3 uid="uid://blavokp8kieee"]
 
 [ext_resource type="Script" path="res://Scripts/awsome_creditsroom.gd" id="1_elgac"]
+[ext_resource type="LabelSettings" uid="uid://2076kcukacf7" path="res://Themes/label_settings.tres" id="3_c8kuh"]
+[ext_resource type="Shader" path="res://Shaders/transition.gdshader" id="4_qt40y"]
+[ext_resource type="Texture2D" uid="uid://dj3ds8wu02i36" path="res://Shaders/CloudMask.png" id="5_1o1u7"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="6_r1g5r"]
 
-[node name="Awsome Creditsroom" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1wus"]
+shader = ExtResource("4_qt40y")
+shader_parameter/player_screen_pos = Vector2(0.5, 0.5)
+shader_parameter/progress = 0.0
+shader_parameter/pixel_size = 70.0
+shader_parameter/mask_pixel_size = 70.0
+shader_parameter/tint_color = Color(0.567, 0.361, 0.361, 1)
+shader_parameter/blur_amount = 5.0
+shader_parameter/MASK_TEXTURE = ExtResource("5_1o1u7")
+
+[node name="Awsome Creditsroom" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_elgac")
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 2.0
-offset_top = -184.0
-offset_right = 481.0
+[node name="Transition" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_l1wus")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Transition"]
+visible = false
+layout_mode = 1
+offset_left = 3.0
+offset_top = 65.0
+offset_right = 497.0
+offset_bottom = 283.0
+scale = Vector2(2.315, 2.315)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource("6_r1g5r")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 471
 text = "YOU DID IT!! WOOOW
 
 Game for a Project of the University of applied science Hochschule Düsseldorf
@@ -24,8 +56,12 @@ Dialog/SFX: Abdülkadir Tetik
 
 Main Menu Title: \"Aquatic Realm of the Spirits\" and Main Floor Title: \"Evil Garden\"
 by Geoffrey \"G.G\" Gunn
+Yippie by Gemran Fortnite Kid
 "
+label_settings = ExtResource("3_c8kuh")
+horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(237, -87)
-zoom = Vector2(2.285, 2.285)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.202
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

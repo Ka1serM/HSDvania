@@ -48,6 +48,12 @@ func update_bafoeg_text(_pos,_type) -> void:
 	if !bafoeg_text.visible:
 		bafoeg_text.visible = !bafoeg_text.visible
 	bafoeg_text.text = str("Bafög: " ,GlobalVariables.bafoeg_count ,"/8")
+	if GlobalVariables.bafoeg_count == 8:
+		$WinSFX.play()
+		var tween = create_tween()
+		tween.tween_property($Transition, "material:shader_parameter/progress", 1.0, 3.0);
+		await tween.finished
+		get_tree().change_scene_to_file("res://Scenes/Levels/awsome_creditsroom.tscn")
 
 
 func _on_text_fade_in_timer_timeout() -> void:
