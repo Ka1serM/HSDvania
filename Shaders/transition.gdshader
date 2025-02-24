@@ -41,13 +41,20 @@ void fragment() {
     //Pixelated Background
     vec4 pixelated_screen_color = texture(SCREEN_TEXTURE, background_uv);
 
+    float dist_to_player = distance(SCREEN_UV, player_screen_pos);
+
+    //Tint
+    vec3 gradient_tint = tint_color * clamp(dist_to_player, 0.0, 1.0);
+
     //Tint
     float fade_factor = clamp((progress - 0.75) / 0.25, 0.0, 1.0);
-    vec3 tinted_background = mix(pixelated_screen_color.rgb * tint_color, vec3(0.0), fade_factor);
+    vec3 tinted_background = mix(pixelated_screen_color.rgb * gradient_tint, vec3(0.0), fade_factor);
 
     //Pixelate Mask
     vec2 mask_scaling = SCREEN_PIXEL_SIZE / 0.0010;
-    vec2 pixelated_mask_uv = floor(mask_uv * mask_pixel_size / mask_scaling) / (mask_pixel_size / mask_scaling);
+	
+	float mask_pixel_size_animated = mask_pixel_size + progress * -(mask_pixel_size / 2.0);
+    vec2 pixelated_mask_uv = floor(mask_uv * mask_pixel_size_animated / mask_scaling) / (mask_pixel_size_animated / mask_scaling);
     pixelated_mask_uv = clamp(pixelated_mask_uv, vec2(0.0), vec2(1.0));
 
     float pixelated_mask = safe_sample(MASK_TEXTURE, pixelated_mask_uv);
@@ -70,14 +77,6 @@ void fragment() {
     if (weight_sum > 0.0) {
         blurred_mask /= weight_sum;
     }
-
-    float dist_to_player = distance(SCREEN_UV, player_screen_pos);
-
-    //Smooth falloff
-    float gradient_factor = smoothstep(0.0, 1.0, dist_to_player);
-
-    //Tint
-    vec3 gradient_tint = mix(tint_color, vec3(0.0, 0.0, 0.0), dist_to_player + 0.2);
 
     COLOR = vec4(mix(tinted_background.rgb, screen_color.rgb, blurred_mask), 1.0);
 }

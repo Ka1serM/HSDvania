@@ -13,12 +13,14 @@ extends  Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Transition.material.set("shader_parameter/progress", 1.0)  # Set initial value
 	Signalhive.connect("player_died", game_over_screen)
 	Signalhive.connect("retry", normal_HUD)
 	Signalhive.connect("collected_bafoeg", update_bafoeg_text)
 	
-	$Transition.material.set("shader_parameter/progress", 1.0)  # Set initial value
-	create_tween().tween_property($Transition, "material:shader_parameter/progress", 0.0, 3.0);
+	#Wait for the scene to finish loading
+	await get_tree().create_timer(0.5).timeout
+	create_tween().tween_property($Transition, "material:shader_parameter/progress", 0.0, 4.0);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
