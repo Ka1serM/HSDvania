@@ -33,6 +33,8 @@ func ToggleVisibility(state: bool) -> void:
 
 func _on_back_pressed() -> void:
 	GlobalVariables.paused = false
+	get_tree().paused = false
+	continue_sfx.play()
 	ToggleVisibility(false)
 
 
