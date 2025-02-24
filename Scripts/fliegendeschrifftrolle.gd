@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var chaseSpeed = 40
+var chaseSpeed = 70
 var path_speed = 0.1
 var player: Node2D = null
 @export var path: Path2D = null
@@ -30,11 +30,11 @@ func _ready():
 
 func _physics_process(delta: float):
 	if player != null:
-		# Hol dir die Position des Spielers
+		# Position des Spielers
 		var playerPos = player.global_position
 		var distanceToPlayer = global_position.distance_to(playerPos)
 		
-		# Verfolge den Spieler, wenn er in Reichweite ist
+		# Verfolge  Spieler wenn in Reichweite ist
 		if distanceToPlayer <= 175:
 			print("chasing player")
 			var direction = (playerPos - global_position).normalized()
@@ -49,7 +49,7 @@ func _physics_process(delta: float):
 			else:
 				print("path_follow_2D ist null! Pfadbewegung nicht möglich.")
 		
-		move_and_slide()  # Bewegung anwenden
+		move_and_slide()  
 	else:
 		print("Kein Spieler gefunden, keine Bewegung!")
 		
@@ -73,7 +73,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 	if player != null:
 		var knockback_direction = (global_position - player.global_position).normalized()
 		velocity = knockback_direction * knockback_strength
-		move_and_slide()  # Wendet die Rückstoßbewegung sofort an
+		move_and_slide()  
 
 	# Wenn 3 Treffer erreicht sind lösche Gegner
 	if damage_count >= 3:

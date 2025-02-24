@@ -635,7 +635,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(32, -35)
+position = Vector2(31, -36)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]
@@ -705,10 +705,32 @@ curve = SubResource("Curve2D_l6clc")
 [node name="slime" parent="Enemies" instance=ExtResource("17_8d08r")]
 position = Vector2(593, -396)
 
+[node name="fliegendeschrifftrolle5" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
+position = Vector2(1073, -405)
+scale = Vector2(0.224071, 0.192821)
+path = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Enemies/fliegendeschrifftrolle5"]
+curve = SubResource("Curve2D_l6clc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle5/Path2D"]
+position = Vector2(4.46223, -10.3725)
+
+[node name="fliegendeschrifftrolle6" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
+position = Vector2(1091, -594)
+scale = Vector2(0.224071, 0.192821)
+path = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Enemies/fliegendeschrifftrolle6"]
+curve = SubResource("Curve2D_l6clc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle6/Path2D"]
+position = Vector2(-13.3887, 15.5585)
+
 [node name="CutsceneAreas" type="Node2D" parent="."]
 
 [node name="CutsceneAreaForStart" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
-position = Vector2(34, -26)
+position = Vector2(33, -24)
 message1 = "What? Where am I? I just wanted to doze off a little during class..."
 message2 = "Is this the HSD?"
 message3 = "It looks different somehow... Maybe this is a dream"
