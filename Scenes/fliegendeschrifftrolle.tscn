@@ -98,14 +98,17 @@ collision_mask = 5
 script = ExtResource("1_b2kfs")
 
 [node name="killzone" parent="." instance=ExtResource("3_idlgx")]
+visible = false
 collision_layer = 9
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+visible = false
 position = Vector2(0.5, 1.66667)
 shape = SubResource("RectangleShape2D_lgahm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -3.33333)
 shape = SubResource("CircleShape2D_17r66")
 
@@ -118,10 +121,12 @@ frame_progress = 0.406741
 speed_scale = 2.0
 
 [node name="DeathAreaOnHead" type="Area2D" parent="."]
+visible = false
 collision_layer = 9
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreaOnHead"]
+visible = false
 position = Vector2(0, -53.3333)
 shape = SubResource("RectangleShape2D_raqm4")
 

@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy5em"]
-size = Vector2(10, 3)
+size = Vector2(13, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vraf6"]
 size = Vector2(16, 9)
@@ -74,7 +74,7 @@ collision_layer = 9
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreaOnHead"]
-position = Vector2(0, 0.5)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_uy5em")
 
 [node name="DamageArea" type="Area2D" parent="."]

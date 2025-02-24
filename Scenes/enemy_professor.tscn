@@ -157,10 +157,10 @@ size = Vector2(44, 56)
 size = Vector2(500, 58.8984)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scxtu"]
-size = Vector2(25, 3)
+size = Vector2(33, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ria3y"]
-size = Vector2(50, 65)
+size = Vector2(50, 63)
 
 [node name="EnemyProfessor" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
@@ -225,7 +225,7 @@ collision_layer = 9
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreaOnHead"]
-position = Vector2(-6.5, -9.5)
+position = Vector2(-6.5, -11)
 shape = SubResource("RectangleShape2D_scxtu")
 
 [node name="CollisionDamage" type="Area2D" parent="."]
@@ -233,7 +233,7 @@ collision_layer = 9
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDamage"]
-position = Vector2(-5, 25.5)
+position = Vector2(-5, 26.5)
 shape = SubResource("RectangleShape2D_ria3y")
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

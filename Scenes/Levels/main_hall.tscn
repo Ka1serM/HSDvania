@@ -635,7 +635,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(34, -33)
+position = Vector2(32, -35)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]
@@ -708,7 +708,7 @@ position = Vector2(593, -396)
 [node name="CutsceneAreas" type="Node2D" parent="."]
 
 [node name="CutsceneAreaForStart" parent="CutsceneAreas" instance=ExtResource("16_wkqcc")]
-position = Vector2(32, -26)
+position = Vector2(34, -26)
 message1 = "What? Where am I? I just wanted to doze off a little during class..."
 message2 = "Is this the HSD?"
 message3 = "It looks different somehow... Maybe this is a dream"
