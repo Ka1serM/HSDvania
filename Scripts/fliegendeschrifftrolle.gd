@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var chaseSpeed = 70
+var chaseSpeed = 65
 var path_speed = 0.1
 var player: Node2D = null
 @export var path: Path2D = null

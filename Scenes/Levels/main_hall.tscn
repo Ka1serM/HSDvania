@@ -635,7 +635,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(31, -36)
+position = Vector2(31, -37)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]
@@ -672,26 +672,6 @@ curve = SubResource("Curve2D_l6clc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle/Path2D"]
 
-[node name="fliegendeschrifftrolle5" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
-position = Vector2(1222, -603)
-scale = Vector2(0.224071, 0.192821)
-path = NodePath("Path2D")
-
-[node name="Path2D" type="Path2D" parent="Enemies/fliegendeschrifftrolle5"]
-curve = SubResource("Curve2D_l6clc")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle5/Path2D"]
-
-[node name="fliegendeschrifftrolle6" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
-position = Vector2(1430, -408)
-scale = Vector2(0.224071, 0.192821)
-path = NodePath("Path2D")
-
-[node name="Path2D" type="Path2D" parent="Enemies/fliegendeschrifftrolle6"]
-curve = SubResource("Curve2D_l6clc")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle6/Path2D"]
-
 [node name="fliegendeschrifftrolle2" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
 position = Vector2(2209, -607)
 scale = Vector2(0.224071, 0.192821)
@@ -726,7 +706,7 @@ curve = SubResource("Curve2D_l6clc")
 position = Vector2(593, -396)
 
 [node name="fliegendeschrifftrolle5" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
-position = Vector2(1073, -405)
+position = Vector2(1088, -591)
 scale = Vector2(0.224071, 0.192821)
 path = NodePath("Path2D")
 
@@ -734,10 +714,10 @@ path = NodePath("Path2D")
 curve = SubResource("Curve2D_l6clc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle5/Path2D"]
-position = Vector2(4.46223, -10.3725)
+position = Vector2(8.92525, 5.18631)
 
 [node name="fliegendeschrifftrolle6" parent="Enemies" node_paths=PackedStringArray("path") instance=ExtResource("16_jdx1y")]
-position = Vector2(1091, -594)
+position = Vector2(1076, -406)
 scale = Vector2(0.224071, 0.192821)
 path = NodePath("Path2D")
 
@@ -745,7 +725,7 @@ path = NodePath("Path2D")
 curve = SubResource("Curve2D_l6clc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/fliegendeschrifftrolle6/Path2D"]
-position = Vector2(-13.3887, 15.5585)
+position = Vector2(13.3876, 0)
 
 [node name="CutsceneAreas" type="Node2D" parent="."]
 
