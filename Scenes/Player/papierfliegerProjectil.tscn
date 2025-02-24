@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dokfmnokt6ltd"]
 
 [ext_resource type="Script" path="res://Scripts/player/papierflieger_projectil.gd" id="1_wch6v"]
-[ext_resource type="Texture2D" uid="uid://dc0vub07o0qn6" path="res://Assets/Misc/paperplaneProjectile.png" id="2_ys6cv"]
+[ext_resource type="Texture2D" uid="uid://cceq0gxxip5e" path="res://Assets/Misc/paperplaneProjectile.png" id="2_ys6cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4epsn"]
 size = Vector2(17, 5)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/framerate_controller.gd" id="1_3gk3p"]
 [ext_resource type="Shader" path="res://Shaders/pixelate.gdshader" id="2_1wose"]
-[ext_resource type="ArrayMesh" uid="uid://qeyd1dxqeki1" path="res://Assets/3D/Models/Heart.obj" id="2_qrjso"]
+[ext_resource type="ArrayMesh" uid="uid://5wuf0pf56503" path="res://Assets/3D/Models/Heart.obj" id="2_qrjso"]
 
 [sub_resource type="Environment" id="Environment_ugs4f"]
 ambient_light_source = 2

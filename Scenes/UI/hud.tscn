@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/ui/hud.gd" id="1_20f3f"]
 [ext_resource type="PackedScene" uid="uid://bhp0iy4vb6m6" path="res://Scenes/UI/health_bar.tscn" id="1_senfn"]
 [ext_resource type="Shader" path="res://Shaders/transition.gdshader" id="2_5yp8a"]
-[ext_resource type="AudioStream" uid="uid://dns1p00fkioyn" path="res://Audio/Sfx/gameover.mp3" id="2_qlak8"]
+[ext_resource type="AudioStream" uid="uid://byrf884m32yj8" path="res://Audio/Sfx/gameover.mp3" id="2_qlak8"]
 [ext_resource type="Script" path="res://Scripts/ui/heart_bar.gd" id="2_rmxq7"]
-[ext_resource type="Texture2D" uid="uid://b7r50gj6a4hm0" path="res://Assets/heart_full.png" id="3_ctj7b"]
-[ext_resource type="Texture2D" uid="uid://dj3ds8wu02i36" path="res://Shaders/CloudMask.png" id="3_eb7a1"]
+[ext_resource type="Texture2D" uid="uid://bckvlpxl6q51k" path="res://Assets/heart_full.png" id="3_ctj7b"]
+[ext_resource type="Texture2D" uid="uid://ch1oojmkpgwso" path="res://Shaders/CloudMask.png" id="3_eb7a1"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="4_4mpp3"]
 [ext_resource type="LabelSettings" uid="uid://2076kcukacf7" path="res://Themes/label_settings.tres" id="6_0df8f"]
 [ext_resource type="AudioStream" uid="uid://y5str6yfvy3m" path="res://Audio/Sfx/continue.mp3" id="6_nqcsj"]
@@ -119,7 +119,3 @@ theme_override_font_sizes/font_size = 44
 text = "Bafög: 0/9"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TextFadeInTimer" type="Timer" parent="."]
-
-[connection signal="timeout" from="TextFadeInTimer" to="." method="_on_text_fade_in_timer_timeout"]
