@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-var chaseSpeed = 40
+var chaseSpeed = 65
 var path_speed = 0.1
 var player: Node2D = null
 @export var path: Path2D = null
 var path_follow_2D: PathFollow2D = null
 signal got_stomped
+var damage_count = 0 # ab drei hits zerbricht der gegner 
+var knockback_strength = 800  # Stärke des Rückstoßes
 
 
 func _ready():
@@ -18,9 +20,9 @@ func _ready():
 	if player == null:
 		print("Spieler wurde nicht gefunden!")
 
-	# Initialisiere path_follow_2D
+	
 	if path != null:
-		path_follow_2D = path.get_node("PathFollow2D") as PathFollow2D
+		path_follow_2D = path.get_node("PathFollow2D") as PathFollow2D # Initialisiere path_follow_2D
 		if path_follow_2D == null:
 			print("PathFollow2D konnte nicht aus 'path' gefunden werden!")
 	else:
@@ -28,13 +30,13 @@ func _ready():
 
 func _physics_process(delta: float):
 	if player != null:
-		# Hol dir die Position des Spielers
+		# Position des Spielers
 		var playerPos = player.global_position
 		var distanceToPlayer = global_position.distance_to(playerPos)
 		
-		# Verfolge den Spieler, wenn er in Reichweite ist
+		# Verfolge  Spieler wenn in Reichweite ist
 		if distanceToPlayer <= 175:
-		   # print("chasing player")
+			print("chasing player")
 			var direction = (playerPos - global_position).normalized()
 			velocity = direction * chaseSpeed
 		else:
@@ -47,7 +49,7 @@ func _physics_process(delta: float):
 			else:
 				print("path_follow_2D ist null! Pfadbewegung nicht möglich.")
 		
-		move_and_slide()  # Bewegung anwenden
+		move_and_slide()  
 	else:
 		print("Kein Spieler gefunden, keine Bewegung!")
 		
@@ -64,3 +66,16 @@ func _on_death_area_on_head_body_entered(body: Node2D) -> void:
 func _on_killzone_body_entered(body: Node2D) -> void:
 	print("folgender Node erhielt damage: ", body.name)
 	Signalhive.emit_signal("player_damaged", 10)
+	# Zähler erhöhen
+	damage_count += 1
+	print("Schaden verursacht:", damage_count, "von 3")
+	# Gegner wird zurückgestoßen
+	if player != null:
+		var knockback_direction = (global_position - player.global_position).normalized()
+		velocity = knockback_direction * knockback_strength
+		move_and_slide()  
+
+	# Wenn 3 Treffer erreicht sind lösche Gegner
+	if damage_count >= 3:
+		print("Gegner hat 3-mal Schaden verursacht und wird entfernt.")
+		queue_free()
