@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/awsome_creditsroom.gd" id="1_elgac"]
 [ext_resource type="LabelSettings" uid="uid://2076kcukacf7" path="res://Themes/label_settings.tres" id="3_c8kuh"]
 [ext_resource type="Shader" path="res://Shaders/transition.gdshader" id="4_qt40y"]
-[ext_resource type="Texture2D" uid="uid://dj3ds8wu02i36" path="res://Shaders/CloudMask.png" id="5_1o1u7"]
+[ext_resource type="Texture2D" uid="uid://ch1oojmkpgwso" path="res://Shaders/CloudMask.png" id="5_1o1u7"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="6_r1g5r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l1wus"]
