@@ -7,7 +7,7 @@ var player_in_sight: bool = false
 var player: Node2D = null
 signal got_stomped
 
-@export var shoot_cooldown: float = 1.5
+@export var shoot_cooldown: float = 0.9
 @export var projectile_scene: PackedScene  # Projektil-Szene
 @onready var shoot_timer = $Timer
 @onready var shoot_marker = $Marker2D
