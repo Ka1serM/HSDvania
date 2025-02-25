@@ -3,7 +3,7 @@ extends Node
 
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
-var spawnable = preload("res://Scenes/Geometry/heart.tscn")
+var spawnable = preload("res://Scenes/3D/heart_3d.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

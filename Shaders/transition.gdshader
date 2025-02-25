@@ -43,7 +43,7 @@ void fragment() {
     vec4 pixelated_screen_color = texture(SCREEN_TEXTURE, background_uv);
 
     // Tint Effect
-    vec3 tinted_background = mix(pixelated_screen_color.rgb * tint_color * 1.5, vec3(0.0), smooth_progress);
+    vec3 tinted_background = mix(pixelated_screen_color.rgb * tint_color * 2.0, vec3(0.0), smooth_progress);
 
     // Pixelate Mask with smooth scaling
     vec2 mask_scaling = SCREEN_PIXEL_SIZE / 0.0010;

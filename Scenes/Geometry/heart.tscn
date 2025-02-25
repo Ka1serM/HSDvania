@@ -1,7 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://uu68fybfthyc"]
+[gd_scene load_steps=5 format=3 uid="uid://hso5rb7mxixo"]
 
-[ext_resource type="Script" path="res://Scripts/player/heart.gd" id="1_hhp4p"]
-[ext_resource type="Texture2D" uid="uid://b7r50gj6a4hm0" path="res://Assets/heart_full.png" id="2_cdsb8"]
+[ext_resource type="Texture2D" uid="uid://bckvlpxl6q51k" path="res://Assets/heart_full.png" id="2_cdsb8"]
+
+[sub_resource type="GDScript" id="GDScript_weg72"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	Signalhive.emit_signal(\"player_healed\", 45)
+	queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jr6q"]
 size = Vector2(20.4082, 17.1735)
@@ -12,7 +30,7 @@ size = Vector2(10, 3.85714)
 [node name="Heart" type="RigidBody2D"]
 mass = 0.2
 gravity_scale = 0.4
-script = ExtResource("1_hhp4p")
+script = SubResource("GDScript_weg72")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0msabm2825vl"]
+
+[ext_resource type="Script" path="res://Scenes/3D/corridor.gd" id="1_05vfq"]
+[ext_resource type="Script" path="res://Scripts/framerate_controller.gd" id="1_br0ux"]
+[ext_resource type="PackedScene" uid="uid://bf5403qvbkpus" path="res://Assets/3D/Models/Corridor/Corridor.tscn" id="2_mm01n"]
+[ext_resource type="Shader" path="res://Shaders/pixelate.gdshader" id="3_vf362"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_af6au"]
+
+[sub_resource type="Sky" id="Sky_6clml"]
+sky_material = SubResource("PhysicalSkyMaterial_af6au")
+
+[sub_resource type="Environment" id="Environment_ugs4f"]
+sky = SubResource("Sky_6clml")
+ambient_light_source = 2
+ambient_light_color = Color(0.8, 0.8, 0.8, 1)
+reflected_light_source = 2
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_use_occlusion = true
+fog_mode = 1
+fog_density = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xui70"]
+shader = ExtResource("3_vf362")
+shader_parameter/pixel_count = Vector2(512, 512)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gf5cs"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_05vfq")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+script = ExtResource("1_br0ux")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport"]
+environment = SubResource("Environment_ugs4f")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-1, 7.6194e-09, 8.70901e-08, 0, 0.996195, -0.0871557, -8.74228e-08, -0.0871557, -0.996195, -294.133, 2.99, -73.04)
+current = true
+fov = 15.0
+size = 4.468
+
+[node name="CorridorExport2" parent="SubViewport" instance=ExtResource("2_mm01n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xui70")
+texture = SubResource("ViewportTexture_gf5cs")

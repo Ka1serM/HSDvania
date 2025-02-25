@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://by142aylipl8y"]
 
-[ext_resource type="PackedScene" uid="uid://d3m5y55geii5s" path="res://Assets/3D/Models/Avatar/AvatarExport.glb" id="1_p4neo"]
+[ext_resource type="PackedScene" uid="uid://cqdu0uckfs1at" path="res://Assets/3D/Models/Avatar/AvatarExport.glb" id="1_p4neo"]
 
 [node name="AvatarExport" instance=ExtResource("1_p4neo")]
 
@@ -91,7 +91,7 @@ bones/65/scale = Vector3(1, 1, 1)
 bones/66/rotation = Quaternion(0.0162731, -0.708911, 0.0244205, 0.704687)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.0393452, -0.489255, 0.871253, 0.428127, -0.796094, -0.427715, 0.902861, 0.356179, 0.240786, -0.412029, 1.02624, 0.0783581)
+transform = Transform3D(-0.0393444, -0.489254, 0.871253, 0.428129, -0.796094, -0.427715, 0.902861, 0.35618, 0.240786, -0.412029, 1.02624, 0.0783588)
 bone_name = "RightHand"
 bone_idx = 36
 

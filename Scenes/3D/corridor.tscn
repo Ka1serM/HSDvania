@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0msabm2825vl"]
+
+[ext_resource type="Script" path="res://Scenes/3D/corridor.gd" id="1_05vfq"]
+[ext_resource type="PackedScene" uid="uid://bf5403qvbkpus" path="res://Assets/3D/Models/Corridor/Corridor.tscn" id="2_mm01n"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_af6au"]
+
+[sub_resource type="Sky" id="Sky_6clml"]
+sky_material = SubResource("PhysicalSkyMaterial_af6au")
+
+[sub_resource type="Environment" id="Environment_ugs4f"]
+sky = SubResource("Sky_6clml")
+ambient_light_source = 2
+ambient_light_color = Color(0.8, 0.8, 0.8, 1)
+reflected_light_source = 2
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_use_occlusion = true
+fog_mode = 1
+fog_density = 1.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gf5cs"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_05vfq")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(4096, 128)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport"]
+environment = SubResource("Environment_ugs4f")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -332.385, 1.82, -45.105)
+current = true
+fov = 5.0
+size = 4.468
+
+[node name="CorridorExport2" parent="SubViewport" instance=ExtResource("2_mm01n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("ViewportTexture_gf5cs")

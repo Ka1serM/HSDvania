@@ -1,13 +1,15 @@
-[gd_scene load_steps=29 format=4 uid="uid://cfa1pfhgilr04"]
+[gd_scene load_steps=36 format=4 uid="uid://cfa1pfhgilr04"]
 
 [ext_resource type="PackedScene" uid="uid://psd3afwb1obn" path="res://Scenes/tile_map_layer.tscn" id="1_a5gr3"]
 [ext_resource type="PackedScene" uid="uid://br113o4fc0jr0" path="res://Scenes/Geometry/ladder.tscn" id="1_boig7"]
 [ext_resource type="Script" path="res://Scripts/ui/main_hall.gd" id="1_jo633"]
 [ext_resource type="PackedScene" uid="uid://mmy2rn1ftwp2" path="res://Scenes/Player/main_character.tscn" id="2_71y8l"]
 [ext_resource type="PackedScene" uid="uid://ck00dg60041rp" path="res://Scenes/Geometry/moving_platform.tscn" id="2_pmor1"]
+[ext_resource type="PackedScene" uid="uid://d0msabm2825vl" path="res://Scenes/3D/corridor.tscn" id="2_wgvw8"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="3_d0fll"]
 [ext_resource type="PackedScene" uid="uid://cs2uyfgbxpa8b" path="res://Scenes/Levels/door.tscn" id="3_invnu"]
 [ext_resource type="FontFile" uid="uid://2ic6uc81xqjn" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="4_4j174"]
+[ext_resource type="Texture2D" uid="uid://c16vlj6qsn1iv" path="res://Shaders/ParticleSprite.png" id="4_gahur"]
 [ext_resource type="PackedScene" uid="uid://dvprl1706bxvj" path="res://Scenes/UI/hud.tscn" id="6_7la1n"]
 [ext_resource type="PackedScene" uid="uid://dengtn5arpki1" path="res://Scenes/Geometry/Breakable_Screen.tscn" id="9_7o3x6"]
 [ext_resource type="PackedScene" uid="uid://t3hiy8bby8og" path="res://Scenes/Player/lineal.tscn" id="11_ak6e8"]
@@ -18,6 +20,28 @@
 [ext_resource type="PackedScene" uid="uid://p0yja3dph7f3" path="res://Scenes/fliegendeschrifftrolle.tscn" id="16_jdx1y"]
 [ext_resource type="PackedScene" uid="uid://cqpc5y8wk3m5l" path="res://Scenes/Geometry/Cutscene_Area.tscn" id="16_wkqcc"]
 [ext_resource type="PackedScene" uid="uid://b63bdnwil11yv" path="res://Scenes/slime.tscn" id="17_8d08r"]
+[ext_resource type="Shader" path="res://Shaders/god_rays.gdshader" id="19_w1vvi"]
+
+[sub_resource type="Curve" id="Curve_b7t54"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.255474, 1), 0.0, 0.0, 0, 0, Vector2(0.750365, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_vbnq7"]
+curve = SubResource("Curve_b7t54")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w1xmd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 0)
+spread = 180.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.02
+scale_max = 0.02
+scale_curve = SubResource("CurveTexture_vbnq7")
+color = Color(1, 0.974667, 0.81, 1)
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
 
 [sub_resource type="Animation" id="Animation_0a0lo"]
 resource_name = "Bother1"
@@ -324,12 +348,51 @@ _data = {
 
 [sub_resource type="Curve2D" id="Curve2D_l6clc"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jm0hr"]
+shader = ExtResource("19_w1vvi")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.175
+shader_parameter/spread = 0.772
+shader_parameter/cutoff = 0.0610001
+shader_parameter/falloff = 0.475
+shader_parameter/edge_fade = 0.438
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 0.9, 0.65, 0.8)
+shader_parameter/hdr = false
+shader_parameter/seed = 8.89
+
 [node name="Main Hall" type="Node2D"]
 script = ExtResource("1_jo633")
 
-[node name="Scene" parent="." instance=ExtResource("14_6mhh8")]
-position = Vector2(110, -20)
-scale = Vector2(0.445, 0.445)
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -1178.0
+offset_top = -1717.0
+offset_right = 2968.0
+offset_bottom = 832.0
+color = Color(0.694118, 0.694118, 0.694118, 1)
+
+[node name="Scene2" parent="." instance=ExtResource("14_6mhh8")]
+position = Vector2(2007, 251)
+scale = Vector2(0.468853, 0.468853)
+
+[node name="Corridor3" parent="." instance=ExtResource("2_wgvw8")]
+position = Vector2(1288, -409)
+scale = Vector2(0.385, 0.385)
+
+[node name="Corridor" parent="." instance=ExtResource("2_wgvw8")]
+position = Vector2(663.315, -40.835)
+scale = Vector2(0.385, 0.385)
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+position = Vector2(838, -460)
+scale = Vector2(18.36, 7)
+amount = 5000
+process_material = SubResource("ParticleProcessMaterial_w1xmd")
+texture = ExtResource("4_gahur")
+lifetime = 5.0
 
 [node name="Labels" type="Control" parent="."]
 layout_mode = 3
@@ -761,3 +824,36 @@ position = Vector2(2266, -586)
 message1 = "Oh no... what are those things?"
 message2 = "They look like my failed exams?"
 message3 = "Now they are haunting me even in my dreams..."
+
+[node name="GodRay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jm0hr")
+offset_left = -2.0
+offset_top = -147.0
+offset_right = 48.0
+offset_bottom = -97.0
+scale = Vector2(2.6205, 2.6205)
+
+[node name="GodRay4" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jm0hr")
+offset_left = 74.0
+offset_top = -336.0
+offset_right = 124.0
+offset_bottom = -286.0
+scale = Vector2(2.78377, 3.03329)
+
+[node name="GodRay5" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jm0hr")
+offset_left = -33.0
+offset_top = -252.0
+offset_right = 17.0
+offset_bottom = -202.0
+rotation = -0.13156
+scale = Vector2(1.40235, 2.23259)
+
+[node name="GodRay2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jm0hr")
+offset_left = 150.0
+offset_top = -145.0
+offset_right = 200.0
+offset_bottom = -95.0
+scale = Vector2(2.6205, 2.6205)
