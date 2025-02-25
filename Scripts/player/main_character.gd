@@ -375,7 +375,7 @@ func knockback()-> void:
 
 func _retry() -> void:
 	health = 100
-	position = Vector2(20,-24)
+	position = Vector2(31,-37)
 	velocity = Vector2.ZERO
 	_damage_healed(100)
 	if $gameovertimer.time_left > 0:

@@ -12,12 +12,17 @@ sky_material = SubResource("PhysicalSkyMaterial_af6au")
 sky = SubResource("Sky_6clml")
 ambient_light_source = 2
 ambient_light_color = Color(0.8, 0.8, 0.8, 1)
-reflected_light_source = 2
 ssao_enabled = true
-ssil_enabled = true
+ssao_intensity = 16.0
+ssao_detail = 0.0
+ssao_sharpness = 1.0
+ssil_radius = 15.35
+ssil_intensity = 0.0
 sdfgi_use_occlusion = true
-fog_mode = 1
-fog_density = 1.0
+glow_intensity = 8.0
+fog_light_energy = 1.1
+fog_sun_scatter = 208.9
+volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gf5cs"]
 viewport_path = NodePath("SubViewport")

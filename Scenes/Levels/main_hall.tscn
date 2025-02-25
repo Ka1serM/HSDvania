@@ -388,7 +388,7 @@ scale = Vector2(0.385, 0.385)
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 position = Vector2(838, -460)
-scale = Vector2(18.36, 7)
+scale = Vector2(18.36, 6.275)
 amount = 5000
 process_material = SubResource("ParticleProcessMaterial_w1xmd")
 texture = ExtResource("4_gahur")
@@ -704,7 +704,7 @@ scale = Vector2(0.932407, 1.77597)
 position = Vector2(996, -398)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_71y8l")]
-position = Vector2(31, -37)
+position = Vector2(31, -34)
 collision_mask = 9
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_a5gr3")]
