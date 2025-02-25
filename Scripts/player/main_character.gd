@@ -177,7 +177,7 @@ func handleMovement()-> void:
 	var directionHorizontal = Input.get_axis("left", "right")
 	var directionVerical = Input.get_axis("down","up")
 	
-	Signalhive.emit_signal("camera_rotate", Vector2(directionHorizontal, directionVerical))
+	Signalhive.emit_signal("camera_3d_update", Vector2(directionHorizontal, directionVerical))
 	
 	if (directionHorizontal > 0):
 		armature.scale.z = 1

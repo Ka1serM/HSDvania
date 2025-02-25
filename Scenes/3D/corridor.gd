@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var parallax_intensity: float = 0.0035
+@export var parallax_intensity: float = 0.0045
 @onready var camera_3d: Camera3D = $SubViewport/Camera3D
 
 var current_position: Vector3

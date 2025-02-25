@@ -131,8 +131,10 @@ stream = ExtResource("7_gvusp")
 volume_db = -5.0
 autoplay = true
 
-[node name="Settings" parent="." instance=ExtResource("12_nl856")]
+[node name="Settings" parent="." node_paths=PackedStringArray("pause_sfx", "continue_sfx") instance=ExtResource("12_nl856")]
 layout_mode = 1
+pause_sfx = NodePath("../UI/MarginContainer/VBoxContainer/UiHoverSfx")
+continue_sfx = NodePath("../UI/MarginContainer/VBoxContainer/UiHoverSfx")
 
 [connection signal="mouse_entered" from="UI/MarginContainer/VBoxContainer/Spielen" to="." method="_on_spielen_mouse_entered"]
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/Spielen" to="." method="_on_spielen_pressed"]
