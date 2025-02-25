@@ -86,8 +86,11 @@ var animation: Tween
 
 var current_weapon
 
+var previous_position: Vector2  #last frame's position
 
 func _ready() -> void:
+	previous_position = global_position  # Initialize previous position
+	
 	#Subscribing to relevant signals
 	Signalhive.connect("collected",_collected)
 	Signalhive.connect("player_entered",_touching_ladder)
@@ -134,7 +137,9 @@ func _physics_process(delta: float) -> void:
 			prevVelocity = velocity
 			prevDirection = direction
 
-
+			#update 3D camera from player position
+			var position_change = global_position - previous_position
+			Signalhive.emit_signal("camera_3d_update", position_change)
 
 # Function that handles the Jump functionality
 func jump()-> void:
@@ -171,6 +176,8 @@ func handleMovement()-> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionHorizontal = Input.get_axis("left", "right")
 	var directionVerical = Input.get_axis("down","up")
+	
+	Signalhive.emit_signal("camera_rotate", Vector2(directionHorizontal, directionVerical))
 	
 	if (directionHorizontal > 0):
 		armature.scale.z = 1
@@ -368,7 +375,7 @@ func knockback()-> void:
 
 func _retry() -> void:
 	health = 100
-	position = Vector2(20,-24)
+	position = Vector2(31,-37)
 	velocity = Vector2.ZERO
 	_damage_healed(100)
 	if $gameovertimer.time_left > 0:

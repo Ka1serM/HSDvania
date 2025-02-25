@@ -26,8 +26,8 @@ shader_parameter/width = 0.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/pixel_count = Vector2(64, 64)
 shader_parameter/is_hit = false
-shader_parameter/hit_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flicker_speed = 100.0
+shader_parameter/cycle_speed = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gf5cs"]
 viewport_path = NodePath("SubViewport")

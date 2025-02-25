@@ -1,15 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvprl1706bxvj"]
+[gd_scene load_steps=13 format=3 uid="uid://dvprl1706bxvj"]
 
 [ext_resource type="Script" path="res://Scripts/ui/hud.gd" id="1_20f3f"]
 [ext_resource type="PackedScene" uid="uid://bhp0iy4vb6m6" path="res://Scenes/UI/health_bar.tscn" id="1_senfn"]
-[ext_resource type="AudioStream" uid="uid://cki6mtlxsx8to" path="res://Audio/Sfx/gameover.mp3" id="2_qlak8"]
+[ext_resource type="Shader" path="res://Shaders/transition.gdshader" id="2_5yp8a"]
+[ext_resource type="AudioStream" uid="uid://byrf884m32yj8" path="res://Audio/Sfx/gameover.mp3" id="2_qlak8"]
 [ext_resource type="Script" path="res://Scripts/ui/heart_bar.gd" id="2_rmxq7"]
-[ext_resource type="Texture2D" uid="uid://b7r50gj6a4hm0" path="res://Assets/heart_full.png" id="3_ctj7b"]
-[ext_resource type="AudioStream" uid="uid://c230y1h538cw" path="res://Audio/Sfx/continue.mp3" id="6_nqcsj"]
-[ext_resource type="FontFile" uid="uid://6k8qt3jkoc8x" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="7_n4tbo"]
+[ext_resource type="Texture2D" uid="uid://bckvlpxl6q51k" path="res://Assets/heart_full.png" id="3_ctj7b"]
+[ext_resource type="Texture2D" uid="uid://ch1oojmkpgwso" path="res://Shaders/CloudMask.png" id="3_eb7a1"]
+[ext_resource type="AudioStream" uid="uid://dc5dbpa5b18my" path="res://Audio/Sfx/continue.mp3" id="6_nqcsj"]
+[ext_resource type="FontFile" uid="uid://2ic6uc81xqjn" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="7_n4tbo"]
+[ext_resource type="AudioStream" uid="uid://ducq1ssjkoeu7" path="res://Audio/Sfx/Yippee Sound Effect.mp3" id="10_0xqcm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yukt"]
-bg_color = Color(0.996078, 0.0705882, 0.0901961, 0.145098)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wlas"]
+shader = ExtResource("2_5yp8a")
+shader_parameter/player_screen_pos = Vector2(0.5, 0.5)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 70.0
+shader_parameter/mask_pixel_size = 70.0
+shader_parameter/tint_color = Color(0.567, 0.361, 0.361, 1)
+shader_parameter/blur_amount = 5.0
+shader_parameter/MASK_TEXTURE = ExtResource("3_eb7a1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2emr"]
+font = ExtResource("7_n4tbo")
+font_size = 48
+shadow_size = 4
+shadow_color = Color(0.33222, 0, 0.0211922, 1)
+shadow_offset = Vector2(4.215, 4.97)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -20,38 +37,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_20f3f")
 
-[node name="GameOver" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.8827, 16.2106)
-theme_override_styles/panel = SubResource("StyleBoxFlat_2yukt")
-
-[node name="Label" type="Label" parent="GameOver"]
-layout_mode = 1
-offset_left = 13.122
-offset_top = 10.5486
-offset_right = 203.122
-offset_bottom = 79.5486
-scale = Vector2(0.0757472, 0.226632)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.331595, 0.408158, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "The nightmare continues...
-
->press SPACE to retry<<"
-
-[node name="GameoverSfx" type="AudioStreamPlayer" parent="GameOver"]
-stream = ExtResource("2_qlak8")
-volume_db = 10.0
-
 [node name="HealthBar" parent="." instance=ExtResource("1_senfn")]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 48.0
-offset_right = 461.0
-offset_bottom = 81.0
+offset_left = 23.0
+offset_top = 27.0
+offset_right = 388.0
+offset_bottom = 45.0
 
 [node name="HeartBar" type="HBoxContainer" parent="."]
 visible = false
@@ -80,6 +71,10 @@ texture = ExtResource("3_ctj7b")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="WinSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0xqcm")
+volume_db = 10.0
+
 [node name="ContinueSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_nqcsj")
 volume_db = 10.0
@@ -100,3 +95,31 @@ theme_override_font_sizes/font_size = 44
 text = "Bafög: 0/9"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Transition" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8wlas")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The nightmare continues...
+
+>press SPACE to retry<<"
+label_settings = SubResource("LabelSettings_a2emr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameoverSfx" type="AudioStreamPlayer" parent="GameOver"]
+stream = ExtResource("2_qlak8")
+volume_db = 10.0

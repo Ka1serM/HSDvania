@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://b67r3klauhadi"]
 
 [ext_resource type="Script" path="res://Scripts/ui/settings.gd" id="1_kvspi"]
-[ext_resource type="FontFile" uid="uid://c58ggr5iuqamq" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="3_oqb2u"]
+[ext_resource type="FontFile" uid="uid://2ic6uc81xqjn" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="3_oqb2u"]
 [ext_resource type="Theme" uid="uid://qhr0010dk67q" path="res://Themes/hsdvania.tres" id="3_w8ixo"]
 [ext_resource type="PackedScene" uid="uid://ck8cocmaryugc" path="res://Scenes/Sound/sfx_handler.tscn" id="4_q6ftk"]
-[ext_resource type="AudioStream" uid="uid://ccm0gl4rbrwmy" path="res://Audio/Sfx/menu-button-88360.mp3" id="5_5e1kk"]
+[ext_resource type="AudioStream" uid="uid://cppdl2oc6jyvq" path="res://Audio/Sfx/menu-button-88360.mp3" id="5_5e1kk"]
 [ext_resource type="Shader" path="res://Shaders/pixelate_scene_texture.gdshader" id="5_t1u6i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fgk2d"]

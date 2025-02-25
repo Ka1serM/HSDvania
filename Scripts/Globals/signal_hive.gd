@@ -19,7 +19,7 @@ signal player_died
 signal transported_player(pos: Vector2)
 signal retry
 
-
+signal camera_3d_update(update: Vector2)
 
 signal collected_bafoeg(pos: Vector2, type)
 signal collected_double_jump(pos: Vector2, type)

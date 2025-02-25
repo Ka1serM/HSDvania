@@ -1,3 +1,10 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://2076kcukacf7"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://2076kcukacf7"]
+
+[ext_resource type="FontFile" uid="uid://2ic6uc81xqjn" path="res://Assets/Fonts/OptimusPrincepsSemiBold.ttf" id="1_7if3n"]
 
 [resource]
+font = ExtResource("1_7if3n")
+font_size = 12
+shadow_size = 4
+shadow_color = Color(0.33222, 0, 0.0211922, 1)
+shadow_offset = Vector2(2, 2)

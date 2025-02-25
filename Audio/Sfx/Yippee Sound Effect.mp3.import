@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ducq1ssjkoeu7"
+path="res://.godot/imported/Yippee Sound Effect.mp3-4671ba186d5e9b851323f4ef799c13b4.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sfx/Yippee Sound Effect.mp3"
+dest_files=["res://.godot/imported/Yippee Sound Effect.mp3-4671ba186d5e9b851323f4ef799c13b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

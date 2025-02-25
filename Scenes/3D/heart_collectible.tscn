@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c36f106y7caxr"]
+
+[ext_resource type="PackedScene" uid="uid://dk5ielqnfwhr7" path="res://Scenes/Player/collectible.tscn" id="1_u5x4w"]
+[ext_resource type="Script" path="res://Scenes/3D/heart_3d.gd" id="2_02hpn"]
+[ext_resource type="PackedScene" uid="uid://cvj22x04hwo7y" path="res://SourceArt/Heart.glb" id="2_gnafr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxb8"]
+size = Vector2(10, 3.85714)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jdaoi"]
+viewport_path = NodePath("Area2D/ParticleViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wlw7e"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Collectible" instance=ExtResource("1_u5x4w")]
+script = ExtResource("2_02hpn")
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Area2D" index="2"]
+position = Vector2(0, 2.65)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_vxxb8")
+
+[node name="PixelatedGlow" parent="." index="1"]
+texture = SubResource("ViewportTexture_jdaoi")
+
+[node name="SubViewport" parent="." index="2"]
+size = Vector2i(32, 32)
+
+[node name="Camera3D" parent="SubViewport" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 2, 2)
+
+[node name="Heart2" parent="SubViewport" index="2" instance=ExtResource("2_gnafr")]
+transform = Transform3D(-4.56784e-08, 0, 1.045, 0, 1.045, 0, -1.045, 0, -4.56784e-08, 200, 1.721, 0)
+
+[node name="Icon" parent="." index="3"]
+scale = Vector2(0.3, 0.3)
+texture = SubResource("ViewportTexture_wlw7e")

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/framerate_controller.gd" id="5_nt5wl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xvjlu"]
-radius = 12.0
+radius = 8.24621
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvxil"]
 shader = ExtResource("3_5mrdp")
@@ -19,20 +19,20 @@ shader_parameter/particles_anim_loop = false
 offsets = PackedFloat32Array(0, 0.458167, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_a342c"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gbfpu"]
 gradient = SubResource("Gradient_gyqck")
 
 [sub_resource type="Curve" id="Curve_ic4ap"]
 _data = [Vector2(0, 0.502089), 0.0, 1.57436, 0, 0, Vector2(1, 1), 0.0999601, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_88l06"]
+[sub_resource type="CurveTexture" id="CurveTexture_ebhbi"]
 curve = SubResource("Curve_ic4ap")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bl0n8"]
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_88l06")
-color_ramp = SubResource("GradientTexture1D_a342c")
+scale_curve = SubResource("CurveTexture_ebhbi")
+color_ramp = SubResource("GradientTexture1D_gbfpu")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
@@ -45,11 +45,11 @@ viewport_path = NodePath("Area2D/ParticleViewport")
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_su60n"]
 
-[sub_resource type="Sky" id="Sky_6clml"]
+[sub_resource type="Sky" id="Sky_5mtnp"]
 sky_material = SubResource("PhysicalSkyMaterial_su60n")
 
 [sub_resource type="Environment" id="Environment_yvxff"]
-sky = SubResource("Sky_6clml")
+sky = SubResource("Sky_5mtnp")
 ambient_light_source = 2
 ambient_light_color = Color(0.8, 0.8, 0.8, 1)
 reflected_light_source = 2
