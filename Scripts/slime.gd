@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50  # Geschwindigkeit des Gegners
+const SPEED = 90  # Geschwindigkeit des Gegners
 const GRAVITY = 500  # Schwerkraft (optional, falls nötig)
 var direction = 1  # Richtung des Gegners
 
